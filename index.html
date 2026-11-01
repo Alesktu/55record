@@ -274,27 +274,6 @@
             text-align: center;
         }
 
-        .visualizer {
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            margin: 2rem 0;
-        }
-
-        .bar {
-            width: 6px;
-            background: var(--accent);
-            border-radius: 3px;
-            animation: pulse 1.2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { height: 15px; opacity: 0.4; }
-            50% { height: 75px; opacity: 1; }
-        }
-
         .toggle-btn {
             background: #262b36;
             border: none;
@@ -532,7 +511,7 @@
         <section class="hero">
             <div class="location-badge"><i class="fa-solid fa-location-dot"></i> Nantes / Bouguenais (44340)</div>
             <h1>Donne à tes morceaux la production qu'ils méritent.</h1>
-            <p>Accompagnement & Coaching artistique global pour artistes et groupes : <br>Prise de son d'instruments & voix, composition par multi-instrumentiste, <br>Mixage et Mastering.</p>
+            <p>Accompagnement artistique global pour artistes et groupes : Prise de son d'instruments réels & voix, Arrangement multi-instrumentiste, Mixage et Mastering.</p>
             <div>
                 <a onclick="scrollToSection('contact')" class="btn"><i class="fa-solid fa-paper-plane"></i> Me Contacter Directement</a>
             </div>
@@ -544,7 +523,7 @@
             <p style="text-align:center; color: var(--text-dim); margin-top:-2rem; margin-bottom:2rem;">Clique sur une prestation pour ouvrir sa fiche détaillée :</p>
             <div class="services-grid">
                 <div class="card" onclick="showPage('page-rec')">
-                    <img src="https://static.wixstatic.com/media/73958d_b8cfc83ab14048c69b5cc9eb8d202bd7~mv2.jpg" alt="Prise de son studio" class="card-img">
+                    <img src="https://static.wixstatic.com/media/73958d_ce38a9dabf994c2391eb8aaaafa414b5~mv2.webp" alt="Prise de son studio" class="card-img">
                     <div class="card-body">
                         <i class="fa-solid fa-sliders"></i>
                         <h3>Enregistrement En Studio</h3>
@@ -552,7 +531,7 @@
                     </div>
                 </div>
                 <div class="card" onclick="showPage('page-arr')">
-                    <img src="https://static.wixstatic.com/media/73958d_ca6efb51499b460685f813b55c705c0c~mv2.jpg" alt="Instruments et arrangement" class="card-img">
+                    <img src="https://static.wixstatic.com/media/73958d_30368db37d3644eb833f93d6b08218e5~mv2.jpg" alt="Instruments et arrangement" class="card-img">
                     <div class="card-body">
                         <i class="fa-solid fa-guitar"></i>
                         <h3>Arrangement & Multi-instrument</h3>
@@ -583,7 +562,7 @@
                     </div>
                 </div>
                 <div class="inst-item" onclick="showPage('page-pianos')">
-                    <img src="https://img.recordingmag.com/wp-content/uploads/2018/04/Neumann_Lounge-Studios_05.jpg" alt="Piano et Claviers">
+                    <img src="https://static.wixstatic.com/media/73958d_f1ebd097a89446678dafe2a1af616939~mv2.jpg" alt="Piano et Claviers">
                     <div class="inst-overlay">
                         <span>Pianos & Synthétiseurs</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -597,7 +576,7 @@
                     </div>
                 </div>
                 <div class="inst-item" onclick="showPage('page-drums')">
-                    <img src="https://cdn11.bigcommerce.com/s-tsw2okvg64/product_images/uploaded_images/d4a4b765-61c0-4713-97ec-bc5a64aab2e8.jpeg" alt="Batterie réelle, virtuelle et VSTi">
+                    <img src="https://static.wixstatic.com/media/73958d_e3f74e37461244c1bfdf1a37d3d8f3e8~mv2.jpg" alt="Batterie réelle, virtuelle et VSTi">
                     <div class="inst-overlay">
                         <span>Batterie Réelle, VSTi & Banque HD</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -606,23 +585,23 @@
             </div>
         </section>
 
-        <!-- SECTION LA DIFFÉRENCE AVEC IMAGE DE FOND -->
+        <!-- SECTION LA DIFFÉRENCE AVEC LECTEUR AUDIO VISIBLE MP3 -->
         <section id="ab-test" class="ab-section">
-            <h2 class="section-title">La différence <span>ALL4PROD</span></h2>
+            <h2 class="section-title">La différence <span>55RECORD</span></h2>
             <div class="ab-player">
-                <p style="font-size:1.1rem; color:var(--text-light);">Bascule en direct pour comparer la prise brute au résultat final :</p>
-                <div class="visualizer">
-                    <div class="bar" style="animation-delay: 0.1s"></div>
-                    <div class="bar" style="animation-delay: 0.3s"></div>
-                    <div class="bar" style="animation-delay: 0.2s"></div>
-                    <div class="bar" style="animation-delay: 0.4s"></div>
-                    <div class="bar" style="animation-delay: 0.15s"></div>
-                    <div class="bar" style="animation-delay: 0.35s"></div>
+                <p style="font-size:1.1rem; color:var(--text-light); margin-bottom: 1.5rem;">Écoute la différence entre la prise brute et le mix final :</p>
+                
+                <!-- Boutons de sélection -->
+                <div style="margin-bottom: 1.5rem;">
+                    <button class="toggle-btn active" onclick="loadAudio('raw', this)">Prise Brute / Demo</button>
+                    <button class="toggle-btn" onclick="loadAudio('mixed', this)">Mix & Master 55RECORD</button>
                 </div>
-                <div>
-                    <button class="toggle-btn active" onclick="setMode('raw', this)">Prise Brute / Demo</button>
-                    <button class="toggle-btn" onclick="setMode('mixed', this)">Mix & Master 55RECORD</button>
-                </div>
+
+                <!-- Lecteur audio natif optimisé pour MP3 -->
+                <audio id="audio-player" controls style="width: 100%; max-width: 500px; border-radius: 4px;">
+                    <source src="https://raw.githubusercontent.com/Alesktu/55record/272b9c6f0283efa2b588a8ba6b3ef1cc6cbf2b52/Choose%20BRUT%20demi.mp3" type="audio/mpeg">
+                    Ton navigateur ne supporte pas l'élément audio.
+                </audio>
             </div>
         </section>
 
@@ -649,26 +628,26 @@
                 <div class="calculator">
                     <div class="calc-option">
                         <label for="tracks">Nombre de titres :</label>
-                        <input type="number" id="tracks" value="1" min="1" max="20" style="padding:0.5rem; width:70px; background:var(--bg-dark); color:#fff; border:1px solid var(--border);" onchange="calculateTotal()">
+                        <input type="number" id="tracks" value="1" min="1" max="20" style="padding:0.5rem; width:70px; background:var(--bg-dark); color:#fff; border:1px solid var(--border);" oninput="calculateTotal()" onchange="calculateTotal()">
                     </div>
                     <div class="calc-option">
-                        <label><input type="checkbox" id="opt-rec" onchange="calculateTotal()"> Enregistrement En Studio (Journée 8h)</label>
-                        <span>250 € / jour</span>
+                        <label><input type="checkbox" id="opt-rec" onchange="calculateTotal()"> Enregistrement Studio (Demi Journée 4h)</label>
+                        <span>120 €</span>
                     </div>
                     <div class="calc-option">
-                        <label><input type="checkbox" id="opt-arr" checked onchange="calculateTotal()"> Arrangement Par Multi-instrumentiste & VSTi</label>
-                        <span>+90 € / titre</span>
+                        <label><input type="checkbox" id="opt-arr" checked onchange="calculateTotal()"> Enregistrement Studio (Journée 8h)</label>
+                        <span>240 €</span>
                     </div>
                     <div class="calc-option">
                         <label><input type="checkbox" id="opt-mix" checked onchange="calculateTotal()"> Mixage Professionnel</label>
-                        <span>140 € / titre</span>
+                        <span>80 € / titre</span>
                     </div>
                     <div class="calc-option">
                         <label><input type="checkbox" id="opt-master" checked onchange="calculateTotal()"> Mastering Stéréo HD</label>
-                        <span>50 € / titre</span>
+                        <span>40 € / titre</span>
                     </div>
                     <div class="calc-total">
-                        Total estimé : <span id="total-price" style="color:var(--accent);">280 €</span>
+                        Total estimé : <span id="total-price" style="color:var(--accent);">360 €</span>
                     </div>
                     <div style="margin-top:2rem; text-align:center;">
                         <button onclick="transferToContact()" class="btn" style="width:100%;">
@@ -683,7 +662,7 @@
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Export Wav HD & MP3 320kbps</li>
                         <li><i class="fa-solid fa-check"></i> Prise de son d'instruments réels</li>
-                        <li><i class="fa-solid fa-check"></i> Retouches 3 par titre pendant la prod</li>
+                        <li><i class="fa-solid fa-check"></i> Retouches illimitées pendant la prod</li>
                         <li><i class="fa-solid fa-check"></i> Fichiers pour Spotify & Apple Music</li>
                         <li><i class="fa-solid fa-check"></i> Conseils de direction artistique</li>
                     </ul>
@@ -747,12 +726,9 @@
                     </div>
 
                     <div style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem;">
-                        <!-- BOUTON SMS DIRECT COMPATIBLE IOS ET ANDROID -->
                         <button type="button" onclick="sendSMS()" class="btn btn-green" style="font-size:1.05rem;">
                             <i class="fa-solid fa-comment-sms"></i> Envoyer en SMS Direct sur mon mobile (06 88 87 59 75)
                         </button>
-
-                        <!-- BOUTON EMAIL DIRECT -->
                         <button type="button" onclick="sendEmail()" class="btn" style="background:#262b36; border:1px solid var(--border);">
                             <i class="fa-solid fa-envelope"></i> Envoyer par E-mail classique
                         </button>
@@ -770,8 +746,8 @@
     <div id="page-rec" class="page">
         <div class="detail-container">
             <a class="back-btn" onclick="showPage('home')"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
-            <h1 style="font-size:2.5rem; margin-bottom:1rem;">Enregistrement <span>Studio Réel</span></h1>
-            <img src="https://static.wixstatic.com/media/73958d_b8cfc83ab14048c69b5cc9eb8d202bd7~mv2.jpg" class="detail-hero" alt="Studio enregistrement">
+            <h1 style="font-size:2.5rem; margin-bottom:1rem;">Enregistrement <span>Studio </span></h1>
+            <img src="https://static.wixstatic.com/media/73958d_53457eb1b2c844a7a81c5dfab10e15b0~mv2.webp" class="detail-hero" alt="Studio enregistrement">
 
             <div class="detail-grid">
                 <div>
@@ -800,7 +776,7 @@
         <div class="detail-container">
             <a class="back-btn" onclick="showPage('home')"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
             <h1 style="font-size:2.5rem; margin-bottom:1rem;">Arrangement & <span>Multi-instrument</span></h1>
-            <img src="https://static.wixstatic.com/media/73958d_ca6efb51499b460685f813b55c705c0c~mv2.jpg" class="detail-hero" alt="Arrangement musical">
+            <img src="https://static.wixstatic.com/media/73958d_f1ebd097a89446678dafe2a1af616939~mv2.jpg" class="detail-hero" alt="Arrangement musical">
 
             <div class="detail-grid">
                 <div>
@@ -891,7 +867,7 @@
         <div class="detail-container">
             <a class="back-btn" onclick="showPage('home')"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
             <h1 style="font-size:2.5rem; margin-bottom:1rem;">Pianos & <span>Synthétiseurs</span></h1>
-            <img src="https://img.recordingmag.com/wp-content/uploads/2018/04/Neumann_Lounge-Studios_05.jpg" class="detail-hero" alt="Claviers Studio">
+            <img src="https://static.wixstatic.com/media/73958d_f1ebd097a89446678dafe2a1af616939~mv2.jpg" class="detail-hero" alt="Claviers Studio">
 
             <div class="detail-grid">
                 <div>
@@ -949,7 +925,7 @@
         <div class="detail-container">
             <a class="back-btn" onclick="showPage('home')"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
             <h1 style="font-size:2.5rem; margin-bottom:1rem;">Batterie Réelle, <span>VSTi & Banques HD</span></h1>
-            <img src="https://cdn11.bigcommerce.com/s-tsw2okvg64/product_images/uploaded_images/d4a4b765-61c0-4713-97ec-bc5a64aab2e8.jpeg" class="detail-hero" alt="Batterie acoustique et virtuelle">
+            <img src="https://static.wixstatic.com/media/73958d_f1ebd097a89446678dafe2a1af616939~mv2.jpg" class="detail-hero" alt="Batterie acoustique et virtuelle">
 
             <div class="detail-grid">
                 <div>
@@ -999,30 +975,61 @@
             }, 100);
         }
 
-        function setMode(mode, btn) {
+        // CHARGEMENT AUDIO DEPUIS LES ADRESSES RAW MP3
+        function loadAudio(mode, btn) {
             document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+
+            const player = document.getElementById('audio-player');
+            
+            // Liens bruts directes vers les MP3
+            const brutUrl = "https://raw.githubusercontent.com/Alesktu/55record/272b9c6f0283efa2b588a8ba6b3ef1cc6cbf2b52/Choose%20BRUT%20demi.mp3";
+            const masterUrl = "https://raw.githubusercontent.com/Alesktu/55record/272b9c6f0283efa2b588a8ba6b3ef1cc6cbf2b52/Choose%20MASTER%20demi.mp3";
+
+            if (mode === 'raw') {
+                player.src = brutUrl;
+            } else {
+                player.src = masterUrl;
+            }
+            
+            player.load();
         }
 
         function calculateTotal() {
-            const tracks = parseInt(document.getElementById('tracks').value) || 1;
+            const tracksInput = document.getElementById('tracks');
+            const tracks = tracksInput ? parseInt(tracksInput.value) || 1 : 1;
             let unitPrice = 0;
 
-            if (document.getElementById('opt-arr').checked) unitPrice += 90;
-            if (document.getElementById('opt-mix').checked) unitPrice += 140;
-            if (document.getElementById('opt-master').checked) unitPrice += 50;
+            const optMix = document.getElementById('opt-mix');
+            const optMaster = document.getElementById('opt-master');
+            const optRec = document.getElementById('opt-rec');
+            const optArr = document.getElementById('opt-arr');
+
+            if (optMix && optMix.checked) unitPrice += 80;
+            if (optMaster && optMaster.checked) unitPrice += 40;
 
             let total = tracks * unitPrice;
-            if (document.getElementById('opt-rec').checked) total += 250;
 
-            document.getElementById('total-price').innerText = total + ' €';
+            if (optRec && optRec.checked) total += 120;
+            if (optArr && optArr.checked) total += 240;
+
+            const totalPriceEl = document.getElementById('total-price');
+            if (totalPriceEl) {
+                totalPriceEl.innerText = total + ' €';
+            }
+            
             return { tracks, total };
         }
 
         function transferToContact() {
             const res = calculateTotal();
-            document.getElementById('c-tracks').value = res.tracks;
-            document.getElementById('c-message').value = `Bonjour Alex,\n\nJe souhaite réserver/discuter d'un projet de ${res.tracks} titre(s) pour un budget estimé à environ ${res.total} € via le simulateur du site.`;
+            const cTracks = document.getElementById('c-tracks');
+            const cMessage = document.getElementById('c-message');
+
+            if (cTracks) cTracks.value = res.tracks;
+            if (cMessage) {
+                cMessage.value = `Bonjour Alex,\n\nJe souhaite réserver/discuter d'un projet de ${res.tracks} titre(s) pour un budget estimé à environ ${res.total} € via le simulateur du site.`;
+            }
             scrollToSection('contact');
         }
 
@@ -1039,9 +1046,8 @@
                 return;
             }
 
-            const bodyText = `Projet ALL4PROD :\nNom: ${name}\nTél: ${phone}\nEmail: ${email}\nTitres: ${tracks}\nMessage: ${msg}`;
+            const bodyText = `Projet 55RECORD :\nNom: ${name}\nTél: ${phone}\nEmail: ${email}\nTitres: ${tracks}\nMessage: ${msg}`;
 
-            // Détection iOS (iPhone/iPad) vs Android pour la syntaxe SMS
             const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
             const separator = isIOS ? '&' : '?';
 
@@ -1057,7 +1063,7 @@
             const tracks = document.getElementById('c-tracks').value;
             const msg = document.getElementById('c-message').value;
 
-            const mailSubject = `Nouveau Projet ALL4PROD - ${name}`;
+            const mailSubject = `Nouveau Projet 55RECORD - ${name}`;
             const mailBody = `Bonjour Alex,\n\nVoici les détails de mon projet musical :\n\n- Nom / Artiste : ${name}\n- Téléphone : ${phone}\n- E-mail : ${email}\n- Nombre de titres : ${tracks}\n\n- Détails du projet :\n${msg}`;
 
             const mailtoUrl = `mailto:Alex.turbe@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
